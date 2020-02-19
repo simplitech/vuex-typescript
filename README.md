@@ -7,12 +7,12 @@ An effective accessor to make Vuex 100% typescript friendly
 npm i @simpli/vuex-typescript vuex
 ```
 
-# Configuration with example
+## Configuration with example
 
 The example below is a Vuex Store scenario which has
 the `RootStore` with a module called `BasketModule`
 
-## src/store/index.ts
+### src/store/index.ts
 ```typescript
 import Vue from 'vue'
 import Vuex, {Store} from 'vuex'
@@ -31,7 +31,7 @@ root.modules = {
 export new Store(root)
 ```
 
-## src/store/RootStore.ts
+### src/store/RootStore.ts
 ```typescript
 import {AccessorHandler} from '@simpli/vuex-typescript'
 import {ActionContext, ModuleTree, StoreOptions} from 'vuex'
@@ -68,7 +68,7 @@ export class RootStore implements StoreOptions<RootState> {
 }
 ```
 
-## src/store/modules/BasketModule.ts
+### src/store/modules/BasketModule.ts
 ```typescript
 import {AccessorHandler} from '@simpli/vuex-typescript'
 import {ActionContext, Module} from 'vuex'
@@ -128,7 +128,7 @@ export class BasketModule implements Module<BasketState, RootState> {
 }
 ```
 
-## src/models/BasketItem.ts
+### src/models/BasketItem.ts
 ```typescript
 export class BasketItem {
   constructor(
@@ -139,7 +139,7 @@ export class BasketItem {
 }
 ```
 
-## src/helpers/App.ts
+### src/helpers/App.ts
 ```typescript
 import {AccessorWrapper} from '@simpli/vuex-typescript'
 import {RootState} from '@/store/RootStore'
@@ -162,7 +162,7 @@ export abstract class App {
 }
 ```
 
-## src/helpers/Basket.ts
+### src/helpers/Basket.ts
 ```typescript
 import {AccessorWrapper} from '@simpli/vuex-typescript'
 import {RootState} from '@/store/RootStore'
@@ -203,7 +203,7 @@ export abstract class Basket {
 }
 ```
 
-## src/types/vue.d.ts
+### src/types/vue.d.ts
 ```typescript
 import {App} from '@/helpers/App'
 import {Basket} from '@/helpers/Basket'
@@ -216,7 +216,7 @@ declare module 'vue/types/vue' {
 }
 ```
 
-## src/main.ts
+### src/main.ts
 ```typescript
 import Vue from 'vue'
 import {App} from '@/helpers/App'
@@ -231,7 +231,7 @@ Vue.prototype.$basket = Basket
 
 ```
 
-# Usage in Typescript/JS file
+## Usage in Typescript/JS file
 
 ```typescript
 import {Root} from '@/helpers/Root'
@@ -278,7 +278,7 @@ console.log(Basket.isEmpty) // true
 console.log(Basket.amount) // 0
 ```
 
-# Usage in Vue file
+## Usage in Vue file
 ```vue
 <template>
   <div>
@@ -301,7 +301,7 @@ export default class MyComponent extends Vue {}
 </script>
 ```
 
-# Credit
+## Credit
 
 This library was built based on this repository
 https://github.com/istrib/vuex-typescript
