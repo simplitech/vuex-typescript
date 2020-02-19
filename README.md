@@ -301,7 +301,7 @@ export default class MyComponent extends Vue {}
 </script>
 ```
 
-#Credit
+# Credit
 
 This library was built based on this repository
 https://github.com/istrib/vuex-typescript
