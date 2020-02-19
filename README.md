@@ -2,7 +2,7 @@
 
 An effective accessor to make Vuex 100% typescript friendly
 
-# Install
+## Install
 ```
 npm i @simpli/vuex-typescript vuex
 ```
