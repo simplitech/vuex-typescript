@@ -300,3 +300,8 @@ import {Component, Vue} from 'vue-property-decorator'
 export default class MyComponent extends Vue {}
 </script>
 ```
+
+#Credit
+
+This library was built based on this repository
+https://github.com/istrib/vuex-typescript
